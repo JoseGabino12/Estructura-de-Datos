@@ -1,28 +1,18 @@
-export default class Sueldo{
-    
-    constructor(){
-        this.sueldo = 5000
-    }
+var sueldo = 5000;
 
-    getAumento(){
-        if(this.sueldo <= 1000){
-            this.sueldo = this.sueldo + (this.sueldo * 15)/100;
-            return this.sueldo;
-        } else if((this.sueldo >= 1001) && (this.sueldo <= 1200) ){
-            this.sueldo = this.sueldo + (this.sueldo * 12)/100;
-            return this.sueldo;
-        }else if((this.sueldo >= 1201) && (this.sueldo <= 1400) ){
-            this.sueldo = this.sueldo + (this.sueldo * 10)/100;
-            return this.sueldo;
-        }else if((this.sueldo >= 1401) && (this.sueldo <= 1500) ){
-            this.sueldo = this.sueldo + (this.sueldo * 8)/100;
-            return this.sueldo;
-        }else if(this.sueldo > 1500){
-            this.sueldo = this.sueldo + (this.sueldo * 5)/100;
-            return this.sueldo;
-        }
-    }
+if(sueldo <= 1000){
+    sueldo = sueldo + (sueldo * 15)/100;
+    console.log(sueldo);
+} else if((sueldo >= 1001) && (sueldo <= 1200) ){
+    sueldo = sueldo + (sueldo * 12)/100;
+    console.log(sueldo);
+}else if((sueldo >= 1201) && (sueldo <= 1400) ){
+    sueldo = sueldo + (sueldo * 10)/100;
+    console.log(sueldo);
+}else if((sueldo >= 1401) && (sueldo <= 1500) ){
+    sueldo = sueldo + (sueldo * 8)/100;
+    console.log(sueldo);
+}else if(sueldo > 1500){
+    sueldo = sueldo + (sueldo* 5)/100;
+    console.log(sueldo);
 }
-
-let app = new Sueldo();
-console.log(app.getAumento());
