@@ -75,3 +75,13 @@ let tablero = new Tablero();
 let jugador1 = new Jugador('Gabino');
 let jugador2 = new Jugador('Laura');
 
+while (jugador1.posicion <= 100 && jugador2.posicion <= 100) {
+    jugador1.posicion = tablero.vCasilla(jugador1.avanzar(dado.lanzar()));
+    jugador2.posicion = tablero.vCasilla(jugador2.avanzar(dado.lanzar()));
+    console.log(`${jugador1.nombre} avanza a la casilla: ${jugador1.posicion} , ${jugador2.nombre} avanza a la casilla: ${jugador2.posicion}`);
+}
+if (jugador1.posicion >= 100) {
+    console.log(`${jugador1.nombre} ha ganado`);
+} else if (jugador2.posicion >= 100) {
+    console.log(`${jugador2.nombre} ha ganado`);
+}
