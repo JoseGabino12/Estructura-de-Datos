@@ -1,6 +1,6 @@
 import Alerta from './alertas.js';
-import Producto from './producto.js'
-import Almacen from './almacen.js'
+import Producto from './producto.js';
+import Almacen from './almacen.js';
 
 const ui = new Alerta();
 const almacen = new Almacen();
@@ -25,66 +25,51 @@ function validarDatos(e) {
     const cantidad = Number(document.getElementById('cantidad').value);
     const costo = Number(document.getElementById('costo').value);
 
-    if(almacen.totalProductos() >=20) {
-        ui.mostrarMensaje('Has alcanzado el limite de productos agregados!');
-    } else {
-
-        if(nombre === '' || descripcion === '' || cantidad === '' || costo === '') {
-            ui.mostrarMensaje('Todos los campos necesitan estar llenos.');
-        } else if( isNaN(cantidad) || cantidad <= 0) {
-            ui.mostrarMensaje('Revise que haya llenado los espacios correctamente.');
-        } else if(costo <= 0 || isNaN(costo)) {
-            ui.mostrarMensaje('Revise que haya llenado los espacios correctamente.');
-        } else {
-            const nuevoProducto = new Producto(nombre, descripcion, cantidad, costo);
-            almacen.agregarProducto(nuevoProducto);
-        }
-    }
-
-
-    setTimeout(() => {
-        limpiarFormularios();
-    }, 2000)
-}
+//     if(almacen.totalProductos() >=20) {
+//         ui.mostrarMensaje('Has alcanzado el limite de productos agregados!');
+//     } else {
+//         if(nombre === '' || descripcion === '' || cantidad === '' || costo === '') {
+//             ui.mostrarMensaje('Todos los campos necesitan estar llenos.');
+//         } else if( isNaN(cantidad) || cantidad <= 0) {
+//             ui.mostrarMensaje('Revise que haya llenado los espacios correctamente.');
+//         } else if(costo <= 0 || isNaN(costo)) {
+//             ui.mostrarMensaje('Revise que haya llenado los espacios correctamente.');
+//         } else {
+//             const nuevoProducto = new Producto(nombre, descripcion, cantidad, costo);
+//             almacen.agregarProducto(nuevoProducto);
+//         }
+//     }
+//     setTimeout(() => {
+//         limpiarFormularios();
+//     }, 2000)
+// }
 
 
 function borrarArticulo(e) {
     e.preventDefault();
-
     const codigo = Number(document.querySelector('#codigoBorrar').value);
     if(almacen.borrarProducto(codigo)) {
         alert('El articulo se borro con exito!');
-
         return;
     } else {
         alert('No se ha podido borrar el articulo indicado')
     }
-
-
     setTimeout(() => {
         limpiarFormularios();
     }, 3000)
 }
-
-
 
 function buscarArticulo(e) {
     e.preventDefault();
-
     const codigoProducto = Number(document.querySelector('#codigoBuscar').value);
     const productos = almacen.buscarProducto(codigoProducto);
-
     for(let producto of productos) {
         ui.mostrarProducto(producto);
     }
-
     setTimeout(() => {
         limpiarFormularios();
     }, 3000)
 }
-
-
-
 
 function recuperarProducto() {
     borrarElementos();
@@ -94,30 +79,21 @@ function recuperarProducto() {
     }
 }
 
-
-
 function recuperarProducto2() {
     borrarElementos();
-
     for(let producto of almacen.productos.reverse()) {
         ui.listarProductos(producto)
     }
 }
 
-
-
 function borrarElementos() {
-    
     const lista = document.querySelector('#listado-productos');
-
     while(lista.firstChild) {
         lista.firstChild.remove(lista.firstChild);
     }
 }
 
-
 function limpiarFormularios() {
-
     formularioAgregar.reset();
     formularioBorrar.reset();
     formularioBuscar.reset();
