@@ -25,24 +25,24 @@ function validarDatos(e) {
     const cantidad = Number(document.getElementById('cantidad').value);
     const costo = Number(document.getElementById('costo').value);
 
-//     if(almacen.totalProductos() >=20) {
-//         ui.mostrarMensaje('Has alcanzado el limite de productos agregados!');
-//     } else {
-//         if(nombre === '' || descripcion === '' || cantidad === '' || costo === '') {
-//             ui.mostrarMensaje('Todos los campos necesitan estar llenos.');
-//         } else if( isNaN(cantidad) || cantidad <= 0) {
-//             ui.mostrarMensaje('Revise que haya llenado los espacios correctamente.');
-//         } else if(costo <= 0 || isNaN(costo)) {
-//             ui.mostrarMensaje('Revise que haya llenado los espacios correctamente.');
-//         } else {
-//             const nuevoProducto = new Producto(nombre, descripcion, cantidad, costo);
-//             almacen.agregarProducto(nuevoProducto);
-//         }
-//     }
-//     setTimeout(() => {
-//         limpiarFormularios();
-//     }, 2000)
-// }
+    if(almacen.totalProductos() >=20) {
+        ui.mostrarMensaje('Has alcanzado el limite de productos agregados!');
+    } else {
+        if(nombre === '' || descripcion === '' || cantidad === '' || costo === '') {
+            ui.mostrarMensaje('Todos los campos necesitan estar llenos.');
+        } else if( isNaN(cantidad) || cantidad <= 0) {
+            ui.mostrarMensaje('Revise que haya llenado los espacios correctamente.');
+        } else if(costo <= 0 || isNaN(costo)) {
+            ui.mostrarMensaje('Revise que haya llenado los espacios correctamente.');
+        } else {
+            const nuevoProducto = new Producto(nombre, descripcion, cantidad, costo);
+            almacen.agregarProducto(nuevoProducto);
+        }
+    }
+    setTimeout(() => {
+        limpiarFormularios();
+    }, 2000)
+}
 
 
 function borrarArticulo(e) {
