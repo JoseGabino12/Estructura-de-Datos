@@ -2,6 +2,10 @@ export default class Alerta {
     constructor() {
     }
 
+    // agregado(){
+
+    // }
+
     mostrarMensaje(mensaje) {
         const padre = document.querySelector('#mensaje1');
 

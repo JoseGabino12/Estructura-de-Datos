@@ -39,6 +39,7 @@ function validarDatos(e) {
             almacen.agregarProducto(nuevoProducto);
         }
     }
+    alert('Se agrego correctamente!')
     setTimeout(() => {
         limpiarFormularios();
     }, 2000)
