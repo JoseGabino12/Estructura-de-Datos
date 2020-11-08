@@ -32,7 +32,6 @@ export default class Inventario {
         }
     }
 
-    //Corregirle
     agregarProductoPosicion(nuevoProducto, posicion) {
         let aux = this.inicio
         let aux2 = 0;
@@ -93,10 +92,14 @@ export default class Inventario {
     searchProduct(codigo) {
         let aux = this.inicio;
 
-        while(aux.codigo != codigo) {
-            aux = aux.siguiente;
-        }
+        if(aux == null){
+            alert("No se ha registrado ningún producto");
+        }else{
+            while(aux.codigo != codigo) {
+                aux = aux.siguiente;
+            }
 
-        return aux;
+            return aux;
+        }
     }
 }

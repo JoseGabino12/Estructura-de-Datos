@@ -69,7 +69,7 @@ function agregarProductoFinal() {
 
 function borrarPrimerProducto() {
     let productoEliminado = inventario.deleteFirstProduct();
-    return productoEliminado;
+    console.log(productoEliminado);
 }
 
 function borrarArticulo() {
