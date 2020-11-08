@@ -5,6 +5,7 @@ export default class Producto{
         this.descripcion = descripcion
         this.cantidad = cantidad
         this.costo = costo
+        this.siguiente = null;
     }
 
     getTotal(){

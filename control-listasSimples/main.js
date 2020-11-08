@@ -9,7 +9,7 @@ const btnAddProductStart = document.querySelector('#addStart');
 const btnAddPosition = document.querySelector('#addPosition');
 const btnDelete = document.querySelector('#delete');
 const btnDeleteFirst = document.querySelector('#deleteFirst');
-const searchForm = document.querySelector('#searchForm');
+const searchForm = document.querySelector('#search-form');
 const btnShowProduct = document.querySelector('#showProduct')
 const btnShowProductInver = document.querySelector('#showProductInvers')
 

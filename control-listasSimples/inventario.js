@@ -91,12 +91,12 @@ export default class Inventario {
 
 
     searchProduct(codigo) {
+        let elementoBuscado;
         let aux = this.inicio;
-
         while(aux.codigo !== codigo) {
             aux = aux.siguiente;
         }
 
-        return aux
+        return aux;
     }
 }
