@@ -42,21 +42,11 @@ export default class Inventario {
         }else{
             for(let i = 0; i <= posicion - 1; i++) {
                 aux2 = aux;
-                if(aux == null){
-                    aux = nuevoProducto;
-                    console.log(aux);
-                    return;
-                }else{
-                    aux = aux.siguiente;
-                }
+                aux = aux.siguiente;
             }
-            // if(aux == null){
-            //     aux = nuevoProducto;
-            //     return;
-            // }else{
-            //     aux = nuevoProducto;
-            //     aux2.siguiente = aux;
-            // }
+            aux2.siguiente = nuevoProducto;
+            nuevoProducto.siguiente = aux;
+            return this.inicio;
         }
     }
 
@@ -125,5 +115,17 @@ export default class Inventario {
             }
         }
         
+    }
+
+    listInvert(){
+        let aux = this.inicio;
+        let auxEnd = 0;
+        while(aux != null){ 
+            auxEnd = aux;
+            aux = aux.siguiente;
+        }
+        auxEnd.siguiente = this.inicio
+
+        return auxEnd;
     }
 }

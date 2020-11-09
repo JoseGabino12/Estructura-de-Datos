@@ -85,9 +85,9 @@ function buscarProducto(e) {
 }
 
 function listarProductosInvertido() {
-    validarDatos();
+   console.log(inventario.listInvert());
 }
 
 function listarProductos() {
-    validarDatos();
+    console.log(inventario);
 }
