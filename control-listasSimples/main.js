@@ -24,9 +24,9 @@ btnShowProductInver.addEventListener('click', listarProductosInvertido);
 
 function agregarProductoPosicion() {
     const producto = validarDatos();
-    const posicion = document.querySelector('#posicion').value;
+    const posicion = document.querySelector('#addPos').value;
 
-    inventario.agregarProductoPosicion(producto, posicion);
+    console.log(inventario.agregarProductoPosicion(producto, posicion));
 }
 
 
