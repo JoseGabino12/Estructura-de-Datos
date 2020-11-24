@@ -77,7 +77,8 @@ export default class Inventario {
             return;
         }else if(this.inicio.codigo === codigo) {
             elementoBorrado = this.inicio;
-            this.inicio = this.inicio.siguiente
+            this.inicio = this.inicio.siguiente;
+            this.inicio.anterior = null;
             return elementoBorrado;
         } else {
             let aux = this.inicio;
@@ -111,8 +112,8 @@ export default class Inventario {
             return productoEliminado;
         } else {
             productoEliminado = this.inicio;
-            this.inicio = this.inicio.siguiente
-    
+            this.inicio = this.inicio.siguiente;
+            this.inicio.anterior = null;
             return productoEliminado;
         }
     }
