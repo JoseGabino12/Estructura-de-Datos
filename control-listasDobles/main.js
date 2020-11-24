@@ -5,8 +5,6 @@ const inventario = new Inventario();
 
 
 const btnAddProductEnd = document.querySelector('#addEnd');
-const btnAddProductStart = document.querySelector('#addStart');
-const btnAddPosition = document.querySelector('#addPosition');
 const btnDelete = document.querySelector('#delete');
 const btnDeleteFirst = document.querySelector('#deleteFirst');
 const searchForm = document.querySelector('#search-form');
@@ -14,20 +12,11 @@ const btnShowProduct = document.querySelector('#showProduct')
 const btnShowProductInver = document.querySelector('#showProductInvers')
 
 btnAddProductEnd.addEventListener('click', agregarProductoFinal);
-btnAddProductStart.addEventListener('click', agregarProductoInicio);
-btnAddPosition.addEventListener('click', agregarProductoPosicion);
 btnDeleteFirst.addEventListener('click', borrarPrimerProducto);
 btnDelete.addEventListener('click', borrarArticulo);
 searchForm.addEventListener('submit', buscarProducto);
 btnShowProduct.addEventListener('click', listarProductos);
 btnShowProductInver.addEventListener('click', listarProductosInvertido);
-
-function agregarProductoPosicion() {
-    const producto = validarDatos();
-    const posicion = document.querySelector('#addPos').value;
-
-    console.log(inventario.agregarProductoPosicion(producto, posicion));
-}
 
 
 function validarDatos() {
@@ -50,12 +39,6 @@ function validarDatos() {
 
         return producto
     }
-}
-
-function agregarProductoInicio() {
-    let producto = validarDatos();
-
-    inventario.addProductStart(producto);
 }
 
 

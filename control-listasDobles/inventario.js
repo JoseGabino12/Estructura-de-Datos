@@ -2,18 +2,6 @@ export default class Inventario {
     constructor() {
         this.inicio = null;
     }
-
-    addProductStart(newProduct) {
-
-        console.log(newProduct);
-        if(this.inicio === null) {
-            this.inicio = newProduct
-        } else {
-            newProduct.siguiente = this.inicio;
-            this.inicio.anterior = newProduct;
-            this.inicio = newProduct;
-        }
-    }
     
     addProduct(newProduct) {
 
@@ -34,44 +22,11 @@ export default class Inventario {
         }
     }
 
-    agregarProductoPosicion(nuevoProducto, posicion) {
-        let aux = this.inicio;
-        let aux2 = 0;
-
-        if( (aux == null) && (posicion == 1)){
-            this.inicio = nuevoProducto;
-            return this.inicio;
-        }else if(posicion == 1){
-            nuevoProducto.siguiente = this.inicio;
-            this.inicio.anterior = nuevoProducto;
-            this.inicio = nuevoProducto;
-            return this.inicio;
-        }
-        else{
-            for(let i = 0; i <= posicion - 1; i++) {
-        //         if(aux == null){
-        //             aux2.siguiente = aux;
-        //             aux = nuevoProducto;
-        //             nuevoProducto.anterior = aux2;
-        //             return this.inicio;
-        //         }else{   
-                    aux2 = aux;
-                    aux = aux.siguiente;
-        //         }
-            }
-            return aux2;
-            
-        //         nuevoProducto.siguiente = aux;
-        //         aux2.siguiente = nuevoProducto;
-        //         nuevoProducto.anterior = aux2;
-        //         return this.inicio;
-        }
-    }
 
 
     deleteProduct(codigo) {
         let elementoBorrado;
-
+        let aux = this.inicio;
         if(this.inicio === null){
             alert("No hay productos");
             return;
@@ -80,22 +35,17 @@ export default class Inventario {
             this.inicio = this.inicio.siguiente;
             this.inicio.anterior = null;
             return elementoBorrado;
-        } else {
-            let aux = this.inicio;
-            let cont = 1;
-            for(let i = 0; i < cont; i++){
-                if(aux.siguiente == null){
-                    alert("No se encontro el producto");
-                    return;
-                }else if(aux.siguiente.codigo == codigo){
-                    elementoBorrado = aux.siguiente;
-                    aux.siguiente = aux.siguiente.siguiente;
-                    return elementoBorrado;
-                }else{
-                    aux = aux.siguiente;
-                    cont++;
-                }
+        }else{
+            while(aux.codigo != codigo) {
+                aux = aux.siguiente;
             }
+    
+            aux.anterior.siguiente = aux.siguiente;
+            aux.siguiente.anterior = aux.anterior;
+            aux.siguiente = null;
+            aux.anterior = null;
+            elementoBorrado = aux;
+            return elementoBorrado;
         }
 
     }
