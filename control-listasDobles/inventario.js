@@ -93,6 +93,7 @@ export default class Inventario {
         while(aux.siguiente !== null) {
             listaInversa[i] = aux;
             aux = aux.siguiente;
+            
             i++;
         }
         // for(let index = listaInversa.length - 1; index !=-1 ; index--)
