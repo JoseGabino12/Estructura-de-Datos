@@ -88,13 +88,17 @@ export default class Inventario {
 
     listInvert(){
         let aux = this.inicio;
-        let auxEnd = 0;
-        while(aux != null){ 
-            auxEnd = aux;
+        let listaInversa = Array();
+        let i = 0;
+        while(aux.siguiente !== null) {
+            listaInversa[i] = aux;
             aux = aux.siguiente;
+            i++;
         }
-        auxEnd.siguiente = this.inicio
-
-        return auxEnd;
+        // for(let index = listaInversa.length - 1; index !=-1 ; index--)
+        // {
+        //     console.log(listaInversa[i]);
+        // }
+        console.log(listaInversa);
     }
 }

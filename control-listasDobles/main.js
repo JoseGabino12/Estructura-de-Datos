@@ -68,7 +68,7 @@ function buscarProducto(e) {
 }
 
 function listarProductosInvertido() {
-   console.log(inventario.listInvert());
+   inventario.listInvert();
 }
 
 function listarProductos() {
