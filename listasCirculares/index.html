@@ -10,64 +10,51 @@
 <body>
     <h1>Rutas de transporte</h1>
 
-    <div class="div-form-mio border-mio">
-        <header >
-            <h2>Base de autobuses</h2>
-        </header>
-        <div class="form-group col-md-6">
-            <label for="codigo"> Base de inicio:</label>
-            <input type="text" id="codigo" class="form-control">
+    <div class="div-form-mio">
+        <h1 class="Titulo"> Bases</h1>
+            <div class="form-group col-md-6">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Nombre Base" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="minutos">Tiempo (minutos):</label>
+                <input type="text" id="minutos" placeholder="minutos" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Posicion (opcional):</label>
+                <input type="text" id="posicion" class="form-control">
+            </div>
+
+            <button id="agregar" class="btn btn-primary">Agregar</button>
+            <button id="buscar" class="btn btn-primary">Buscar</button>
+            <button id="eliminar" class="btn btn-primary">Eliminar</button>
+
+            <button id="insertar" class="btn btn-primary">Insertar</button>
+        <div id="mensaje1">
         </div>
-        <div class="form-group col-md-6">
-            <label for="nombre">Hora de inicio:</label>
-            <input id="nombre" type="text" class="form-control">
-        </div>
-        <div class="form-group col-md-6">
-            <label for="descripcion">Hora final:</label>
-            <input id="descripcion" type="text" class="form-control">
-        </div>
-        
-        <button type="submit" class="btn btn-outline-primary" id="addEnd">Agregar</button>
     </div>
 
-    <div class="div-form-mio border-mio">
-            <header>
-                <h2>Eliminar articulo</h2>
-            </header>
+    <div class="div-form-mio">
+        <h1 class="Titulo"> Obtener tarjeta de trabajo</h1>
+        <form id="formulario2" action="#">
             <div class="form-group col-md-6">
-                <label for="codigoBorrar">Codigo del articulo que desea eliminar:</label>
-                <input id="codigoBorrar" type="text" class="form-control">
+                <label for="baseInicio">Base a iniciar:</label>
+                <input type="text" id="baseinicio" class="form-control">
             </div>
-
-            <button type="submit" class="btn btn-outline-primary" id="delete">Eliminar</button>
-            <button type="submit" class="btn btn-outline-primary" id="deleteFirst">Eliminar primer producto</button>
-    </div>
-
-    <div class="div-form-mio border-mio">
-        <form action="" id="search-form">
-            <header>
-                <h2>Buscar articulo</h2>
-            </header>
             <div class="form-group col-md-6">
-                <label for="codigoBuscar">Codigo del articulo que desea buscar:</label>
-                <input id="codigoBuscar" type="text" class="form-control">
+                <label for="horainicio">horario de inicio:</label>
+                <input type="time" id="horainicio" class="form-control">
             </div>
-            <div>
-                <ul id="producto-buscado">
+            <div class="form-group col-md-6">
+                <label for="horafin">Horario finalizar:</label>
+                <input type="time" id="horafin" class="form-control">
+            </div>
 
-                </ul>
-            </div>
-            <button type="submit" class="btn btn-outline-primary">Buscar</button>
+            <button type="submit" class="btn btn-primary">Obtener Tarjeta de trabajo</button>
         </form>
+        <div id="mensaje2">
+        </div>
     </div>
-
-    <div id="productos" class="div-form-mio border-mio">
-        <h3>Listado de productos</h3>
-        <ul id="listado-productos" class="list-group">
-        </ul>
-        <button id="showProduct" class="btn btn-outline-primary">Listar productos</button>
-        <button id="showProductInvers" class="btn btn-outline-primary">Listar productos de manera inversa</button>
-    </div><br>
 
 </body>
     <script src="main.js" type="module"></script>
